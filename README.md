@@ -1,6 +1,6 @@
 Um sistema de loja de jogos, no qual um cliente realiza uma compra, inclui os produtos e realiza o pagamente. Os funcionários se encarregam de administrar o estoque e registrar novos produtos. 
 
-![DiagramaLojaJogos](Captura_de_tela_2026-03-24_092927.png)
+![DiagramaLojaJogos](DiagramaAtualizado.png)
 
 Implementação do SOLID:
 
