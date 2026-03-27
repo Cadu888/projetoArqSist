@@ -1,15 +1,21 @@
 Um sistema de loja de jogos, no qual um cliente realiza uma compra, inclui os produtos e realiza o pagamente. Os funcionários se encarregam de administrar o estoque e registrar novos produtos. 
 
 ![DiagramaLojaJogos](DiagramaAtualizado.png)
+(Professor, não consegui implementar as retas tracejadas com o triângulo branco na hora de atribuir as setas das interfaces, como o senhor tinha mencionado anteriormente, não sei se é coisa do Lucidchart.)
 
-Implementação do SOLID:
+Princípios GRASP:
 
-Single Responsability: As classes possuem a única função de armazenar suas respectivas propriedades
+O diagrama abaixo, segue os seguintes princípios do GRASP
 
-Open-Close: Os métodos das classes estão em interfaces dedicadas, logo, não havendo necessidade de alteração das classes em si. Mas estando aberta par a implementação de novas interfaces
+— InformationExpert: As classes somente executam as funções as quais possuem os atributos necessários para executá-las.
 
-LSP: As classes derivam de abstrações, por exemplo, Entidade -> Usuário -> Cliente, etc. Uma entidade se torna um usuário que se torna um cliente, sem haver qualquer alteração no funcionamento do código. Portanto, seguindo o princípio LSP.
+— High Coesion: Todas as classes possuem responsabilidades bem definidas (Ex: Ao invés da classe cliente realizar carregar o histórico de compras e os métodos de pagamento, existem classes definidas especificamente para realizar essas funções).
 
-ISP: Cada propriedade das classes possuem uma interface dedicada apenas aos métodos referentes a uma propriedade específica, reduzindo drasticamente a possibilidade dos métodos implementados na interface ficarem em desuso.
+— Low Coupling: As classes principais do diagrama apresentam pouca dependência entre si, por exemplo, Cliente não está diretamente associado a Compra, mas por uam classe criadora, e a compra depende de uma interface Produto, não de uma classe concreta.
 
-DIP: As classes se encontram bem mais dependentes de abstrações (interfaces) que de outras classes concretas. Respeitando o DIP.
+— Polymorphism: Atribui interfaces para tratar objetos com diferentes comportamentos (Ex: Instancia a interface metodosPagamento, definindo o contrato "básico" que todo método de pagamento deve seguir e, a partir daí, implementa diferentes métodos como Cartão de Crédito e Pix)
+
+— Creator: São utilizadas classes criadoras para instanciar novas classes, por exemplo, CarrinhoCompra instancia Compra, CreatePayment é responsável por instanciar os métodos de pagamento.
+
+— Controller: Define se um usuário irá logar como Cliente ou Funcionário através de uma classe controladora UserCheck.
+
