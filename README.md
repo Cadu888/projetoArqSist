@@ -15,9 +15,13 @@ O diagrama abaixo, segue os seguintes princípios do GRASP
 
 — Polymorphism: Atribui interfaces para tratar objetos com diferentes comportamentos (Ex: Instancia a interface metodosPagamento, definindo o contrato "básico" que todo método de pagamento deve seguir e, a partir daí, implementa diferentes métodos como Cartão de Crédito e Pix)
 
+— Creator: São utilizadas classes criadoras para instanciar novas classes, por exemplo, CarrinhoCompra instancia Compra, CreatePayment é responsável por instanciar os métodos de pagamento.
+
+— Controller: Uso da classe UserCheck para checar se o usuário o qual está logando é um Cliente ou um Funcionário.
+
 ![Diagrama Sequencial](diagramaSequencialCasoClienteRealizandoCompra.png)
 Aqui está um diagrama sequencial para o caso de uso de um Cliente realizando uma compra.
-— Creator: São utilizadas classes criadoras para instanciar novas classes, por exemplo, CarrinhoCompra instancia Compra, CreatePayment é responsável por instanciar os métodos de pagamento.
+
 
 — Controller: Define se um usuário irá logar como Cliente ou Funcionário através de uma classe controladora UserCheck.
 
